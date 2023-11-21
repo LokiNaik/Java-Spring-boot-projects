@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+
+    <title>Employee List</title>
+</head>
+
+<div clas = "container">
+
+    <hr>
+    <a th:href="@{/saveEmployeeDetails}"
+       class="btn btn-primary btn-sm mb-3">
+        Add Employee
+    </a>
+
+    <h1 class = "title"> Employee Details </h1>
+
+    <table class = "table table-bordered table-striped" >
+        <thead class = "table-dark">
+        <tr>
+            <th scope="col" > Id </th>
+            <th scope="col" >first name</th>
+            <th scope="col" >last name</th>
+            <th scope="col" >email</th>
+        </tr>
+        <thead>
+        <tbody>
+        <tr th:each="employee : ${employees}">
+            <td th:text="${employee.id}"></td>
+            <td th:text="${employee.firstName}"></td>
+            <td th:text="${employee.lastName}"></td>
+            <td th:text="${employee.email}"></td>
+            <td><a th:href="@{'/update-employee/' + ${employee.id}}"><button> Edit </button></a></td>
+            <td><a th:href="@{'/delete-employee/' + ${employee.id}}"><button> Delete </button></a></td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

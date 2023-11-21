@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Account Confirmation</title>
+</head>
+<body>
+
+	<h3>Account Confirmation</h3>
+
+	Account Details :
+	<span
+		th:text="${account.name} +' ' +${account.accountNumber} + ' From '+${account.balance} " />
+	<br />
+	<br />
+
+
+
+</body>
+</html>

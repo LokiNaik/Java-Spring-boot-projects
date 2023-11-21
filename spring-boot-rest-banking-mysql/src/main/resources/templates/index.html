@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Account Register Form</title>
+</head>
+<body>
+
+	<h3>Account Registration Form</h3>
+
+	<form th:action="@{/createaccount}" th:object="${account}"
+		method="POST">
+
+		Name : <input type="text" th:field="*{name}" /> <br /> <br />
+		AccountNumber : <input type="text" th:field="*{accountNumber}" /> <br /> <br />
+		Balance : <input type="text" th:field="*{balance}" /> <br /> <br />
+		
+		<br /> <br /> 
+		 
+		<input type="submit"
+			value="Submit" />
+
+	</form>
+
+</body>
+</html>
+
+
+
+
+<!-- Languages:
+				<input type="radio" th:field="*{favLanguage}" th:value="Java"> Java </input>
+		<input type="radio" th:field="*{favLanguage}" th:value="C">C</input>
+		<input type="radio" th:field="*{favLanguage}" th:value="Python">Python</input>
+		<input type="radio" th:field="*{favLanguage}" th:value="JS">JS</input>
+
+
+		<input type="radio" th:field="*{favLanguage}"
+			th:each="favLang : ${favLanguage}" th:value="${favLang}"
+			th:text="${favLang}" />
+			
+		<br /> <br /> -->
